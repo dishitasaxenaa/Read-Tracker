@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Tracker</title>
+    <link rel="stylesheet" href="styles/notes.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <h1>Read Tracker</h1>
+        <div class="bookContainer">
+            <div class="bookDetails">
+                <h2> <%= book.title %> </h2>
+                <h3> -By <%= book.author %> </h3>
+                <span>ISBN : <%= book.isbn %> </span> <br>
+                <span>Date Read : <%=  new Date(book.date).toLocaleDateString("en-GB") %> </span> <br>
+                <span>How strongly I recommend : <%= book.rating %>/10 </span>
+            </div>
+            <div class="bookCover">
+                <img src="<%= book.coverUrl %>" alt="<%= book.title %> Cover">
+            </div>
+            <div class="bookNotes">
+                <h2>Detailed Notes</h2>
+                <p> <%= book.detailed_notes %> </p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

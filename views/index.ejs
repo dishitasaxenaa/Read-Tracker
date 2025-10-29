@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Tracker</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <h1>Read Tracker</h1>
+        <form method="POST" action="/sort">
+          <span>Sort by </span>
+          <button type="submit" name="sortBy" value="date">Date</button>
+          <button type="submit" name="sortBy" value="rating">Rating</button>
+          <button type="submit" name="sortBy" value="title">Title</button>
+        </form>
+
+        <% for(let i = 0 ; i<books.length ; i++){ %>
+            <div class="bookContainer">
+                <form class="bookDetails" method="POST" action="/notes">
+                    <h2> <%= books[i].title %> </h2>
+                    <h3> -By <%= books[i].author %> </h3>
+                    <p>Date Read : <%=  new Date(books[i].date).toLocaleDateString("en-GB") %> </p> 
+                    <p>How strongly I recommend : <%= books[i].rating %>/10 </p>
+                    <p class="summary"> <%= books[i].summary %> </p>
+                    <button type="submit" name="bookId" value="<%= books[i].id %>">Read More</button>
+                </form>
+                <div class="bookCover">
+                     <img src="<%= books[i].coverUrl %>" alt="<%= books[i].title %> cover">
+                </div>
+            </div>
+            <hr>
+        <% } %>
+    </div>
+    
+</body>
+</html>
