@@ -16,12 +16,23 @@ git clone https://github.com/dishitasaxenaa/Read-Tracker.git
 cd Read-Tracker
 ```
 
-### Install the dependencies:
+### Install the dependencies and start the server:
 ```bash
 npm install
+nodemon index.js
 ```
 
-### Start the server:
-```bash
-npm start
-```
+## Tech Stack
+* **Node.js**
+* **Express.js**
+* **EJS** (Embedded JavaScript templates)
+* **PostgreSQL**
+*  **Axios**
+*  **Nodemon** (for automatic server restarts during development)
+
+## Features
+
+* Add and view books with details such as title, author, date read, and rating
+* Store a short summary and detailed notes for each book
+* Automatically fetch book cover images from the Open Library API
+* Sort books by date, title, or rating
